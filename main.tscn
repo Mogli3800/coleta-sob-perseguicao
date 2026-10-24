@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://5p88dh0n8l56" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-a.glb" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://3n7h5vox2auv" path="res://scripts/jogador.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://da74myw3k0s0r" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://bd6scctrear0o" path="res://scripts/item.gd" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://v04pj3xrxa8r" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +21,7 @@ background_mode = 2
 sky = SubResource("Sky_7mycd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
-size = Vector3(1.6073208, 0.011627197, 6.457016)
+size = Vector3(3.2065303, 0.011627197, 12.8076315)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1ui4"]
 size = Vector3(0.48205566, 0.27954102, 0.08520508)
@@ -35,6 +37,9 @@ height = 0.3603058
 radius = 0.092285156
 height = 0.38082886
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bi2i4"]
+size = Vector3(0.38946533, 0.23577881, 0.28744507)
+
 [node name="Principal" type="Node3D" unique_id=1911359914]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1288193627]
@@ -49,10 +54,10 @@ shadow_enabled = true
 [node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=490910410]
 
 [node name="path-long2" parent="Cenario/Chao" unique_id=2039355107 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(8, 0, 0, 0, 1, 0, 0, 0, 16, 0, 0, 0)
+transform = Transform3D(16, 0, 0, 0, 2, 0, 0, 0, 32, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=562413534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010232925, 0.005050659, 0.009666443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008517146, 0.005050659, -0.0034594536)
 shape = SubResource("BoxShape3D_vad88")
 
 [node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=414182410]
@@ -81,19 +86,19 @@ shape = SubResource("BoxShape3D_7cd16")
 
 [node name="building-type-a2" parent="Cenario/Casa" unique_id=490445516 instance=ExtResource("3_h2yge")]
 
-[node name="Jogador" type="CharacterBody3D" parent="." unique_id=111629710]
+[node name="Jogador" type="CharacterBody3D" parent="." unique_id=111629710 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.31049192)
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=572097502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17868805, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.057495117, 0.19880223, 2.1435008)
 shape = SubResource("CapsuleShape3D_vad88")
 
 [node name="character-male-a2" parent="Jogador" unique_id=1873063376 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0.024161458, 0.068859816, 0.7830819)
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0.07851708, 0.038533002, 2.138515)
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=710435048]
-transform = Transform3D(1, 0, 0, 0, 0.95371693, 0.3007058, 0, -0.3007058, 0.95371693, 0.025792003, 0.5965152, 1.2293671)
+transform = Transform3D(1, 0, 0, 0, 0.95371693, 0.3007058, 0, -0.3007058, 0.95371693, 0.08328712, 0.5661621, 2.58526)
 
 [node name="Inimigo" type="CharacterBody3D" parent="." unique_id=1487408860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5507577, 0, 0.22429812)
@@ -104,3 +109,26 @@ shape = SubResource("CapsuleShape3D_y1ui4")
 
 [node name="character-male-f2" parent="Inimigo" unique_id=17756486 instance=ExtResource("5_lquwl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Itens" type="Node3D" parent="." unique_id=457417883]
+
+[node name="Item" type="Area3D" parent="Itens" unique_id=889026882]
+script = ExtResource("7_5vw27")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item" unique_id=206396326]
+transform = Transform3D(0.9997501, 0.02110302, 0.0073725884, -0.020972496, 0.9996294, -0.017355729, -0.007736112, 0.017196774, 0.99982226, 0.046813976, 0.068202734, 1.5740294)
+shape = SubResource("BoxShape3D_bi2i4")
+
+[node name="planter2" parent="Itens/Item" unique_id=1657522156 instance=ExtResource("7_272bh")]
+transform = Transform3D(0.9997503, 0.020896206, 0.007939781, -0.020972492, 0.9997334, 0.009645404, -0.007736113, -0.0098095015, 0.999922, 0.06751389, 0.065703094, 1.5845647)
+
+[node name="planter3" parent="Itens/Item" unique_id=993472364 instance=ExtResource("7_272bh")]
+transform = Transform3D(0.9997503, 0.020896206, 0.007939781, -0.020972492, 0.9997334, 0.009645404, -0.007736113, -0.0098095015, 0.999922, 0.20350409, 0.032047927, 5.432259)
+
+[node name="planter4" parent="Itens/Item" unique_id=781527398 instance=ExtResource("7_272bh")]
+transform = Transform3D(0.9997503, 0.020896206, 0.007939781, -0.020972492, 0.9997334, 0.009645404, -0.007736113, -0.0098095015, 0.999922, 0.12928534, 0.014736831, 4.2278523)
+
+[node name="planter5" parent="Itens/Item" unique_id=1914101963 instance=ExtResource("7_272bh")]
+transform = Transform3D(0.9997503, 0.020896206, 0.007939781, -0.020972492, 0.9997334, 0.009645404, -0.007736113, -0.0098095015, 0.999922, 0.08729315, 0.026280105, 3.5362859)
+
+[connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
