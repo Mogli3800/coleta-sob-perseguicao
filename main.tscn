@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://18gbswteactu"]
 
+[ext_resource type="PackedScene" uid="uid://c66jt2cbnkfs2" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-stones-long.glb" id="1_4c57u"]
 [ext_resource type="PackedScene" uid="uid://tuqg84sv11rf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dghuhlqg5biw4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://vro71tyh1oba" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cqg6baw8wci2x" path="res://scripts/inimigo.gd" id="6_kek77"]
 [ext_resource type="Script" uid="uid://bd6scctrear0o" path="res://scripts/item.gd" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://v04pj3xrxa8r" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/planter.glb" id="7_272bh"]
+[ext_resource type="Script" uid="uid://ysyv2mlm16dr" path="res://scripts/hud.gd" id="11_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,7 +24,7 @@ background_mode = 2
 sky = SubResource("Sky_7mycd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
-size = Vector3(3.2065303, 0.011627197, 12.8076315)
+size = Vector3(2.9858131, 0.07325391, 12.913116)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1ui4"]
 size = Vector3(0.48205566, 0.27954102, 0.08520508)
@@ -59,13 +61,16 @@ shadow_enabled = true
 
 [node name="Cenario" type="Node3D" parent="." unique_id=607957723]
 
+[node name="path-stones-long2" parent="Cenario" unique_id=1688938324 instance=ExtResource("1_4c57u")]
+transform = Transform3D(0.07108313, 0, -6.99964, 0, 6.9999995, 0, 6.99964, 0, 0.07108313, -2.3193064, 0, 0.95753884)
+
 [node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=490910410]
 
 [node name="path-long2" parent="Cenario/Chao" unique_id=2039355107 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(16, 0, 0, 0, 2, 0, 0, 0, 32, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=562413534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008517146, 0.005050659, -0.0034594536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08689976, 0.005050659, -0.064021826)
 shape = SubResource("BoxShape3D_vad88")
 
 [node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=414182410]
@@ -222,6 +227,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2880859, 0, 0.00428319)
 
 [node name="Ponto3" type="Marker3D" parent="PontoPatrulha" unique_id=1045432919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23970366, 0, -5.2121067)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1115946529]
+script = ExtResource("11_efxa6")
+
+[node name="RotoloPotuacao" type="Label" parent="HUD" unique_id=1345346289]
+anchors_preset = -1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 92.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 32
+text = "Pontos: 0"
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item5" to="Itens/Item5" method="_on_body_entered"]
