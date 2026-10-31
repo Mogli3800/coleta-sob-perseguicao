@@ -35,11 +35,15 @@ radius = 0.095214844
 height = 0.3603058
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y1ui4"]
-radius = 0.092285156
-height = 0.38082886
+radius = 0.12597656
+height = 0.41698456
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
 radius = 0.6601676
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
+radius = 0.26464844
+height = 0.5292969
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bi2i4"]
 size = Vector3(0.38946533, 0.23577881, 0.28744507)
@@ -110,7 +114,7 @@ script = ExtResource("6_kek77")
 pontos_patulhar = [NodePath("../PontoPatrulha/Ponto1"), NodePath("../PontoPatrulha/Ponto2"), NodePath("../PontoPatrulha/Ponto3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=1479911463]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17488098, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15680313, 0.017798483)
 shape = SubResource("CapsuleShape3D_y1ui4")
 
 [node name="character-male-f2" parent="Inimigo" unique_id=17756486 instance=ExtResource("5_lquwl")]
@@ -122,6 +126,12 @@ transform = Transform3D(-0.49499896, 0, -0.07054097, 0, 0.5, 0, 0.07054097, 0, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020886898, 0, 0)
 shape = SubResource("SphereShape3D_sx1ah")
 debug_color = Color(0.5997216, 0.41535673, 0.89935863, 0.41960785)
+
+[node name="AreaCapitura" type="Area3D" parent="Inimigo" unique_id=1309125486]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaCapitura" unique_id=1424496564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02052635, 0.1771456, -0.0069873333)
+shape = SubResource("CapsuleShape3D_sx1ah")
 
 [node name="Itens" type="Node3D" parent="." unique_id=457417883]
 

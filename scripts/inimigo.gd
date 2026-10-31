@@ -7,7 +7,7 @@ var referencia_jogador: Node3D = null
 
 @export var pontos_patulhar : Array[Marker3D]= []
 var indice_patrulha := 0
-const VELOCIDADE := 3.5
+const VELOCIDADE := 1.0
 
 const DISTANCIA_CHEGADA := 0.2
 
@@ -22,6 +22,12 @@ func _physics_process(delta: float) -> void:
 func  _ready() -> void:
 	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar) 
 	$AreaDeteccao.body_exited.connect(_ao_detectar_corpo_sair)
+	$AreaCapitura.body_entered.connect(_ao_capiturar_corpo_entrar)
+	
+func _ao_capiturar_corpo_entrar(corpo: Node3D) -> void:
+	if corpo.is_in_group("player"):
+		print("peguei voce")
+	
 	
 func _ao_detectar_corpo_sair(corpo: Node3D)-> void:
 	if corpo.is_in_group("player"):
