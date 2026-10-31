@@ -23,6 +23,9 @@ sky_material = SubResource("ProceduralSkyMaterial_lquwl")
 background_mode = 2
 sky = SubResource("Sky_7mycd")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mtt1"]
+size = Vector3(0.13773832, 0.001, 0.37891796)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
 size = Vector3(2.9858131, 0.07325391, 12.913116)
 
@@ -61,8 +64,14 @@ shadow_enabled = true
 
 [node name="Cenario" type="Node3D" parent="." unique_id=607957723]
 
-[node name="path-stones-long2" parent="Cenario" unique_id=1688938324 instance=ExtResource("1_4c57u")]
-transform = Transform3D(0.07108313, 0, -6.99964, 0, 6.9999995, 0, 6.99964, 0, 0.07108313, -2.3193064, 0, 0.95753884)
+[node name="chao2" type="StaticBody3D" parent="Cenario" unique_id=126503264]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/chao2" unique_id=310789397]
+transform = Transform3D(0.030254103, 0.046527084, -6.9997807, -0.027902735, 6.99979, 0.04640652, 6.9998803, 0.02770127, 0.03044444, -2.467242, 0.023540419, 0.9567997)
+shape = SubResource("BoxShape3D_3mtt1")
+
+[node name="path-stones-long2" parent="Cenario/chao2" unique_id=1688938324 instance=ExtResource("1_4c57u")]
+transform = Transform3D(0.07108313, 0, -6.99964, 0, 6.9999995, 0, 6.99964, 0, 0.07108313, -2.498128, -0.013289034, 0.95753884)
 
 [node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=490910410]
 
@@ -89,6 +98,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0
 shape = SubResource("BoxShape3D_y1ui4")
 
 [node name="fence2" parent="Cenario/Cerca2" unique_id=242582462 instance=ExtResource("2_0xm2m")]
+
+[node name="Cerca3clone" type="StaticBody3D" parent="Cenario" unique_id=87052535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7889242, 0, 0.47063792)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca3clone" unique_id=1248952121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.9751488)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca3clone" unique_id=1754984640 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97209704)
+
+[node name="Cerca4clone" type="StaticBody3D" parent="Cenario" unique_id=748605047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2245288, 0, 0.47063792)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca4clone" unique_id=1106335689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.9751488)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca4clone" unique_id=49233623 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97209704)
+
+[node name="Cerca5clone" type="StaticBody3D" parent="Cenario" unique_id=580207631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6606789, 0, 0.47063792)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca5clone" unique_id=807850571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.9751488)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca5clone" unique_id=788373883 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97209704)
+
+[node name="Cerca6clone" type="StaticBody3D" parent="Cenario" unique_id=1262391046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.108351, 0, 0.46746492)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca6clone" unique_id=636009079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.9751488)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca6clone" unique_id=2110631044 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97209704)
+
+[node name="Cerca5clone" type="StaticBody3D" parent="Cenario/Cerca6clone" unique_id=1789858104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4495716, 0, -0.010088205)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone" unique_id=344450653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13146973, 0.9751488)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1778380192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6165403, 0.03164196, -0.9848908)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence2" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1929104117 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167234, -0.09982777, -0.9879426)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=70097397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6165403, 0.03164196, -0.9848908)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence3" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1976390406 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167234, -0.09982777, -0.9879426)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=160749558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6165403, 0.03164196, -0.9848908)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence4" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1460512977 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167234, -0.09982777, -0.9879426)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1268206267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6165403, 0.03164196, -0.9848908)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence5" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=1951942798 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167234, -0.09982777, -0.9879426)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=868536527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6165403, 0.03164196, -0.9848908)
+shape = SubResource("BoxShape3D_y1ui4")
+
+[node name="fence6" parent="Cenario/Cerca6clone/Cerca5clone/CollisionShape3D" unique_id=908805651 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167234, -0.09982777, -0.9879426)
+
+[node name="fence2" parent="Cenario/Cerca6clone/Cerca5clone" unique_id=1232868113 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.97209704)
 
 [node name="Casa" type="StaticBody3D" parent="Cenario" unique_id=1882091413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7346518)
@@ -234,11 +328,19 @@ script = ExtResource("11_efxa6")
 [node name="RotoloPotuacao" type="Label" parent="HUD" unique_id=1345346289]
 anchors_preset = -1
 offset_left = 20.0
-offset_top = 20.0
-offset_right = 92.0
-offset_bottom = 47.0
+offset_top = 18.0
+offset_right = 163.0
+offset_bottom = 63.0
 theme_override_font_sizes/font_size = 32
 text = "Pontos: 0"
+
+[node name="Rotolotempo" type="Label" parent="HUD" unique_id=1800877287]
+offset_left = 20.0
+offset_top = 58.0
+offset_right = 162.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 32
+text = "Tempo: 0"
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item5" to="Itens/Item5" method="_on_body_entered"]
