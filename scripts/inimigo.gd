@@ -7,8 +7,10 @@ var referencia_jogador: Node3D = null
 
 @export var pontos_patulhar : Array[Marker3D]= []
 var indice_patrulha := 0
-const VELOCIDADE := 2.3
 
+const VELOCIDADE_BASE := 2.3
+
+var velocidade_atual :=VELOCIDADE_BASE
 const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(delta: float) -> void:
@@ -50,11 +52,11 @@ func _patrulhar()-> void:
 		if indice_patrulha == pontos_patulhar.size():
 			indice_patrulha = 0
 	
-	velocity=direcao.normalized() *VELOCIDADE
+	velocity=direcao.normalized() *VELOCIDADE_BASE
 	
 func  _perseguir()-> void:
 	var direcao := referencia_jogador.global_position -global_position
 	direcao.y =0
 	
-	velocity = direcao.normalized() * VELOCIDADE
+	velocity = direcao.normalized() * VELOCIDADE_BASE
 	
