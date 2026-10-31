@@ -7,7 +7,7 @@ var referencia_jogador: Node3D = null
 
 @export var pontos_patulhar : Array[Marker3D]= []
 var indice_patrulha := 0
-const VELOCIDADE := 1.0
+const VELOCIDADE := 2.3
 
 const DISTANCIA_CHEGADA := 0.2
 

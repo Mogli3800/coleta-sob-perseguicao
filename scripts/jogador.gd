@@ -1,5 +1,5 @@
 extends CharacterBody3D
-const VELOCIDADE := 1.5
+const VELOCIDADE := 2.5
 const GRAVIDADE :=9.8
 
 
@@ -14,6 +14,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= GRAVIDADE * delta
 		
-	#look_at(global_position + velocity)
+	look_at(global_position + velocity)
 		
 	move_and_slide()
