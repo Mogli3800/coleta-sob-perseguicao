@@ -14,6 +14,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= GRAVIDADE * delta
 		
-		
+	#look_at(global_position + velocity)
 		
 	move_and_slide()

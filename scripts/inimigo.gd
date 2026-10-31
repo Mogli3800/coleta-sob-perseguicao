@@ -18,7 +18,12 @@ func _physics_process(delta: float) -> void:
 			indice_patrulha = 0
 	
 	velocity=direcao.normalized() *VELOCIDADE
+	look_at(global_position + velocity)
 	move_and_slide()
 	
+func  _ready() -> void:
+	$AreaDeteccao.body_entered.connect(_ao_detectar_corpo_entrar) 
 	
-	
+func  _ao_detectar_corpo_entrar(corpo: Node3D)-> void:
+	if corpo.is_in_group("player"):
+		print("Te vi!")
