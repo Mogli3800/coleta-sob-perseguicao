@@ -60,9 +60,13 @@ func _patrulhar()-> void:
 	
 	velocity=direcao.normalized() * velocidade_atual
 	
+	$modelo/AnimationPlayer.play("walk")
+	
 func  _perseguir()-> void:
 	var direcao := referencia_jogador.global_position -global_position
 	direcao.y =0
 	
 	velocity = direcao.normalized() * velocidade_atual
+	$modelo/AnimationPlayer.play("sprint")
+	
 	

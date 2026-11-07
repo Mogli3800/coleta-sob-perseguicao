@@ -42,7 +42,7 @@ height = 0.3603058
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y1ui4"]
 radius = 0.12597656
-height = 0.41698456
+height = 0.33495712
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
 radius = 0.6601676
@@ -215,10 +215,10 @@ script = ExtResource("6_kek77")
 pontos_patulhar = [NodePath("../PontoPatrulha/Ponto1"), NodePath("../PontoPatrulha/Ponto2"), NodePath("../PontoPatrulha/Ponto3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=1479911463]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15680313, 0.017798483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13991392, 0.017798483)
 shape = SubResource("CapsuleShape3D_y1ui4")
 
-[node name="character-male-f2" parent="Inimigo" unique_id=17756486 instance=ExtResource("5_lquwl")]
+[node name="modelo" parent="Inimigo" unique_id=17756486 instance=ExtResource("5_lquwl")]
 transform = Transform3D(-0.49499896, 0, -0.07054097, 0, 0.5, 0, 0.07054097, 0, -0.49499896, 0, 0, 0)
 
 [node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=499682080]
