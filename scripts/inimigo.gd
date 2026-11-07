@@ -15,6 +15,9 @@ const DISTANCIA_CHEGADA := 0.2
 
 func _physics_process(delta: float) -> void:
 	
+	if GameManager.jogo_encerrar:
+		return
+	
 	velocidade_atual =VELOCIDADE_BASE *GameManager.dificuldade
 	
 	if estado == Estado.PATRULHAR:
@@ -55,11 +58,11 @@ func _patrulhar()-> void:
 		if indice_patrulha == pontos_patulhar.size():
 			indice_patrulha = 0
 	
-	velocity=direcao.normalized() *VELOCIDADE_BASE
+	velocity=direcao.normalized() * velocidade_atual
 	
 func  _perseguir()-> void:
 	var direcao := referencia_jogador.global_position -global_position
 	direcao.y =0
 	
-	velocity = direcao.normalized() * VELOCIDADE_BASE
+	velocity = direcao.normalized() * velocidade_atual
 	
