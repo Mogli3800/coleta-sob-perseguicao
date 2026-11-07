@@ -203,7 +203,7 @@ script = ExtResource("4_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15256652, 0)
 shape = SubResource("CapsuleShape3D_vad88")
 
-[node name="character-male-a2" parent="Jogador" unique_id=1873063376 instance=ExtResource("4_1bvp3")]
+[node name="modelo" parent="Jogador" unique_id=1873063376 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=710435048]

@@ -11,7 +11,14 @@ func _physics_process(delta: float) -> void:
 	
 	direcao.x = Input.get_axis("move_left", "move_right")
 	direcao.z = Input.get_axis("move_forward", "move_back")
-	direcao=direcao .normalized()
+	
+	direcao = direcao .normalized()
+	if  direcao != Vector3.ZERO:
+		
+		$modelo/AnimationPlayer.play("walk")
+	else:
+		$modelo/AnimationPlayer.play("idle")
+	
 	velocity.x = direcao.x * VELOCIDADE
 	velocity.z = direcao.z * VELOCIDADE
 	if not is_on_floor():
