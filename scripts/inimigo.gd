@@ -31,7 +31,7 @@ func  _ready() -> void:
 	
 func _ao_capiturar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
-		print("peguei voce")
+		GameManager.perder()
 	
 	
 func _ao_detectar_corpo_sair(corpo: Node3D)-> void:

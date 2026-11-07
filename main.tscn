@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://18gbswteactu"]
 
 [ext_resource type="PackedScene" uid="uid://c66jt2cbnkfs2" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-stones-long.glb" id="1_4c57u"]
+[ext_resource type="Script" uid="uid://r8ddruv550fx" path="res://principal.gd" id="1_dg77c"]
 [ext_resource type="PackedScene" uid="uid://tuqg84sv11rf" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dghuhlqg5biw4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://vro71tyh1oba" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
@@ -27,7 +28,7 @@ sky = SubResource("Sky_7mycd")
 size = Vector3(0.13773832, 0.001, 0.37891796)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vad88"]
-size = Vector3(2.9858131, 0.07325391, 12.913116)
+size = Vector3(3.1887074, 0.07325391, 12.913116)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y1ui4"]
 size = Vector3(0.48205566, 0.27954102, 0.08520508)
@@ -54,6 +55,7 @@ height = 0.5292969
 size = Vector3(0.38946533, 0.23577881, 0.28744507)
 
 [node name="Principal" type="Node3D" unique_id=1911359914]
+script = ExtResource("1_dg77c")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1288193627]
 environment = SubResource("Environment_272bh")
@@ -79,7 +81,7 @@ transform = Transform3D(0.07108313, 0, -6.99964, 0, 6.9999995, 0, 6.99964, 0, 0.
 transform = Transform3D(16, 0, 0, 0, 2, 0, 0, 0, 32, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=562413534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08689976, 0.005050659, -0.064021826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014547348, 0.005050659, -0.064021826)
 shape = SubResource("BoxShape3D_vad88")
 
 [node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=414182410]
