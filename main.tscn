@@ -196,7 +196,7 @@ shape = SubResource("BoxShape3D_7cd16")
 [node name="building-type-a2" parent="Cenario/Casa" unique_id=490445516 instance=ExtResource("3_h2yge")]
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=111629710 groups=["player"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016611159, 5.413756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7181144, 5.413756)
 script = ExtResource("4_7mycd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=572097502]

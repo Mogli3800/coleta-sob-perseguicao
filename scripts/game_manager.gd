@@ -11,6 +11,7 @@ const TEMPO_PARA_DOBRAR := 60.0
 var  dificuldade :=1.0
 
 var jogo_encerrar := false
+var jogador_capiturado := false
 
 var total_itens := 0
 var itens_coletados := 0
@@ -21,6 +22,7 @@ func vencer() -> void:
 
 func perder() -> void:
 	jogo_encerrar = true
+	jogador_capiturado =true
 	
 	print("Derrota")
 

@@ -34,6 +34,8 @@ func  _ready() -> void:
 	
 func _ao_capiturar_corpo_entrar(corpo: Node3D) -> void:
 	if corpo.is_in_group("player"):
+		$"modelo/AnimationPlayer".play("attack-kick-left")
+		
 		GameManager.perder()
 	
 	
